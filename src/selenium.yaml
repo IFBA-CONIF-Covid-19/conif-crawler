@@ -1,0 +1,5 @@
+driver_path: # path to web driver
+  opera: ""
+  chrome: "" 
+  firefox: ""
+  msedge: ""

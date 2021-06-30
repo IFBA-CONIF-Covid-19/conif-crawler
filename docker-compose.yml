@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+    firefoxdriver:
+        image: selenium/standalone-firefox-debug
+        ports:
+            - "4444:4444"
+            - "5900:5900"
+        container_name: firefoxdriver
+
+    conif-crawler:
+        build: 
+            dockerfile: ./docker/crawler.dockerfile
+            context: .        
+        command: python ./src/main.py -o remoto -d firefox
+        links: 
+            - "firefoxdriver"
+        container_name: conif-crawler
+        image: sesab-conif/crawler
+        # volumes: 
+        #     - C:/Users/Otávio/Desktop/ConifCrawlerDocker:/production
+
+

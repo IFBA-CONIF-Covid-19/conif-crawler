@@ -1,0 +1,2 @@
+class WebDriverNotFound(Exception):
+    pass
